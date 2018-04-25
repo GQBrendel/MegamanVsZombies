@@ -14,7 +14,7 @@ public class ReceiveIMUValues : MonoBehaviour {
 
     void Update()
     {
-        Log.Debug("The rotation is : " + transform.Find("IMU_Object").eulerAngles);
+        Log.Debug("The rotation is : " + transform.Find("BlasterGun").eulerAngles);
     }
 
     void ReadIMU (string data, UduinoDevice device) {
