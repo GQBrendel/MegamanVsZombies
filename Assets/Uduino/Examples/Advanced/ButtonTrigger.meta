@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: b41cd40b2d3ae134fb84bce958f7494e
+labels:
+- Arduino
+- Serial
+- Uduino
+- Unity
+folderAsset: yes
+timeCreated: 1461835220
+licenseType: Store
+DefaultImporter:
+  userData: 
+  assetBundleName: uduino
+  assetBundleVariant: 
