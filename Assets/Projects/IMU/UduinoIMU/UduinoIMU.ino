@@ -52,9 +52,8 @@ void dmpDataReady() {
 
 
 int prevVal = 0;
-// ================================================================
-// ===                      INITIAL SETUP                       ===
-// ================================================================
+
+//  INITIAL SETUP
 
 void setup() {
   // join I2C bus (I2Cdev library doesn't do this automatically)
@@ -68,7 +67,7 @@ void setup() {
   pinMode(12, INPUT_PULLUP);
 
   Serial.begin(38400);
-  while (!Serial); // wait for Leonardo enumeration, others continue immediately
+  while (!Serial); // wait for  enumeration, others continue immediately
 
   mpu.initialize();
   pinMode(INTERRUPT_PIN, INPUT);
@@ -99,11 +98,7 @@ void setup() {
   pinMode(LED_PIN, OUTPUT);
 }
 
-
-
-// ================================================================
-// ===                    MAIN PROGRAM LOOP                     ===
-// ================================================================
+// MAIN LOOP
 
 void loop() {
   uduino.update();
@@ -130,13 +125,13 @@ void loop() {
     fifoCount = mpu.getFIFOCount();
 
 
-    // check for overflow (this should never happen unless our code is too inefficient)
+    // check for overflow
     if ((mpuIntStatus & 0x10) || fifoCount == 1024) {
-      // reset so we can continue cleanly
+      // reset so to continue cleanly
       mpu.resetFIFO();
-      // otherwise, check for DMP data ready interrupt (this should happen frequently)
+      // otherwise, check for DMP data ready interrupt
     } else if (mpuIntStatus & 0x02) {
-      // wait for correct available data length, should be a VERY short wait
+      // wait for correct available data length
       while (fifoCount < packetSize) fifoCount = mpu.getFIFOCount();
 
       // read a packet from FIFO

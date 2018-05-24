@@ -19,7 +19,7 @@ public class ShooterController : MonoBehaviour {
             }
         }
 
-        if (Input.GetButton("Fire1") && fireRate == actualFireRate && Time.timeScale != 0)
+        if (/*Input.GetButton("Fire1") && */fireRate == actualFireRate && Time.timeScale != 0)
         {
                 Rigidbody clone;
                 clone = Instantiate(projectile, shotPoint.position, shotPoint.rotation) as Rigidbody;

@@ -51,6 +51,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f5a4e52dfc3107499249fb2d34a1bae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pins: []
   activeExtentionsMap:
     keys:
     - UduinoDevice_AndroidBluetoothLE
@@ -59,9 +60,7 @@ MonoBehaviour:
   presentExtentionsMap:
     keys:
     - UduinoDevice_DesktopSerial
-    - UduinoDevice_AndroidBluetoothLE
-    - UduinoDevice_AndroidSerial
-    values: 010101
+    values: 01
   debugLevel: 2
   baudRate: 9600
   readOnThread: 1
@@ -78,7 +77,23 @@ MonoBehaviour:
   autoDiscover: 1
   delayBeforeDiscover: 0
   stopAllOnQuit: 1
+  autoReconnect: 1
   blackListedPorts: []
+  OnDataReceivedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Uduino.UduinoManager+eventValueReceived, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnBoardConnectedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Uduino.UduinoManager+eventBoard, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnBoardDisconnectedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Uduino.UduinoManager+eventBoard, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   displayAndroidTextGUI: 0
   autoConnectToLastDevice: 1
   bleScanDuration: 5
